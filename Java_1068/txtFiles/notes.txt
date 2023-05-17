@@ -1,0 +1,4 @@
+my IDE is looking for input from this program that I have been copying from you,
+and I am not sure where the heck its anticipating input to come from as there is no prompt coming up.
+these new lines are just to have more shit in this file for later
+like wow spongeboob is quite the little guy, he sure is

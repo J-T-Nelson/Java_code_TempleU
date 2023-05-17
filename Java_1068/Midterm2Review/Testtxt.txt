@@ -1,0 +1,3 @@
+This is a new file,
+This file has multiple lines,
+I will use this file to refine my skills as a programmer. 

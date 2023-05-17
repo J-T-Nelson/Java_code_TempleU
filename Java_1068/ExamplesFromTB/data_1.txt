@@ -1,0 +1,73 @@
+
+Those of you who've been using eclipse for the last you know couple of months.
+eclipse does all this for you, when you create the project, it asks you what you want to name the package.
+And you almost have to have to go out of your way not to create a package and it puts that package line in there for you.
+you can have a little hierarchy right in the package name itself so.
+00:05:56I might create a package for all the files.
+00:06:02All the files that I might ever develop I might have a fury package and then all the files that I might develop for CIS 1068 be underneath the fury package.
+Fiore.cis1068.lab1
+What if this is what i've called my package, it expects that any file that lives in that package any any class file that lives in that package is in a folder called lab one, which itself is in a folder called 1068, which is itself in a folder called fury just like I have it here.
+the structure of package file organization/recognition in java
+src = source ... which in eclipse is an automatically generated folder for any package you create
+A package name is sort of the equivalent of a last name for people, where it can provide distinction between two similarly named methods
+In order to ensure that all of your classes have globally unique names make your packages have globally unique names.
+And the way you make sure that your packages have globally unique names and you tie it to something else in the world that's guaranteed to be globally unique.
+And what else in the world is globally unique and that's URLs you know website addresses So what if I happen to own the website fury sucks.org if I know that that's globally unique because nobody else can own it well, then I should name all of my packages or fury sucks dot whatever.
+^^ this is on package naming convention
+When you don't specify the package that a class belongs too...
+a package becomes part of the default package and that pretty much just means that all of the files that are in the same folder, and this is why you know we've been saying all semester long you know if you have this code that's.
+this default package business is what allows one .java to find a different .class in the same folder and to thus pull classes and methods from the other files...
+java has protection levels beyond public and private:
+Protected - accessible within class and its descendents
+no keyword -  package access ← default option
+this keyword... never critical to use, often nice to know/use
+this is an alternate option for constructor methods.. EX:
+public car(int Initgas, int Initmiles){
+gas = Initgas;
+miles = Initmiles;
+^^ we can do this differently with this:
+public car(int gas, int miles) {
+this.gas = gas;
+this.miles = miles;
+can this keyword be used to reference the variable name as the name field name? like this.name = this
+error: incompatible types: Point cannot be converted to String
+   this.name = this;
+this.x means the field x... this on its own.. idk what it means.
+import nothing java.util.Scanner in = new java.util.Scanner(System.in);
+You can use an object without importing it in java if you just use the full access path in the place where you call for the object
+For inherited class constructors:
+public Point3D(int x, int y, int z) {
+this.x=x;
+this.y=y;
+this.z=z;}
+NO DIFFERENT FROM:
+public Point3D(int x, int y, int z) {
+super(x, y);
+this.z = z;}
+No argument/default constructor:
+public Point3d(){ ← would need an empty constructor for the parent class to successfully use the super function here.
+super();
+this.z=0;
+super can be used in method other than constructors too. they essentially call the parents version of the method with the same name...
+
+11-18-2021: In class Notes
+A function that calls itself is recursion
+Prof says that its often times easier to conceive a solution to a problem using recursion versus using a loop.
+We are only going as far as understanding what recursion is and also being able to trace a simple recursive function...
+it would require a decent amount of practice to actually start thinking of recursive solutions to problems naturally (I think)
+to have recursion it has to be a function that calls itself.
+recursive functions fundamentally have 2 parts:
+the recursive part: where the function calls itself
+the base case: where the function stops calling itself.
+no base case means the function will indefinitely call itself.
+'stack overflow error'
+Any language can have a program bomb if the memory is exhausted from too many recursive function calls.
+It is legal to have a subclass stored within variable which is typed to contain the address of a parental class to that subclass...
+Employe e .. e storing a lawyer within.
+what is cool about this property is that you can thus pass lawyer classes into arguments which take the Employee class.. as they are hierarchically related... this can save effort and make for more efficient code in OOP
+Java is smart enough to call overridden methods properly too... so a method that calls e.getSalary() and e.getVacationDays... etc will call those from the lawyer class and NOT the employee class, so long as they have been overridden in the lawyer class
+this would be true for any OOP language too.
+This underlying intelligence of java is referred to as polymorphism.
+Polymorphism is the idea that at run time, java is going to figure out the right type and call the right code
+There are rules to how polymorphism works in java though, you can have a null employee variable and assign it to a lawyer variable, therefore both variables of different types will point to the same address which is a lawyer object...
+but you can not call a lawyer exclusive method from the employee typed object unless

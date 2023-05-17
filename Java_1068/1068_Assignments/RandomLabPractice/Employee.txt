@@ -1,0 +1,11 @@
+"Exactly what is stored in ed? laura?"
+    ed stores the address to a Employee object, and laura stores the address to a Lawyer object. 
+
+"Would it be legal to write the following? Why or why not?
+ Employee ed = new Lawyer();"
+    Yes, because inheritance describes an "is a" relationship. A Lawyer "is a" Employee, so we can store a
+    reference to a Lawyer object in an Employee variable.
+
+"Would it be legal to write the following? Why or why not?
+ Lawyer linda = new Employee();"
+    No, Lawyer "is a" Employee but the converse is not true; Employee is not a Lawyer.
